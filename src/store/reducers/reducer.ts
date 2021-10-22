@@ -6,7 +6,7 @@ import {
 } from "../actions/actionTypes";
 
 export interface InitialState { 
-  post: any,
+  post: IPostDetails[],
   postDetails: any,
   pending: boolean,
 }

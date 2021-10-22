@@ -31,7 +31,7 @@ export interface ICreate {
 
 interface IDetails { 
   type: string,
-  payload: any,
+  payload: IPostDetails,
 }
 
 export const fetchPostsRequest = (): IAction => ({
@@ -39,7 +39,7 @@ export const fetchPostsRequest = (): IAction => ({
 });
 
 export const fetchPostsSuccess = (
-  payload: any
+  payload: IPostDetails
 ): IDetails => ({
   type: FETCH_POSTS_SUCCESS,
   payload,
@@ -52,7 +52,7 @@ export const postDetailsRequest = (payload: string): IAction => ({
 
 export const postDetailsSuccess = (
   payload: IPostDetails
-): any => ({
+): IDetails => ({
   type: POST_DETAILS_SUCCESS,
   payload,
 });

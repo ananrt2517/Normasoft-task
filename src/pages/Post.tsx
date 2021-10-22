@@ -7,7 +7,7 @@ import Spinner from '../components/Spinner';
 import { SpinnerDiv } from './PostDetails';
 import { CreatePostModal } from '../components/CreatePostModal';
 import { StyledButton } from './PostDetails';
-import { InitialState } from '../store/reducers/reducer';
+import { InitialState, IPostDetails } from '../store/reducers/reducer';
 
 export const User = () => {
 
@@ -37,7 +37,7 @@ export const User = () => {
             <StyledText>After creating the post refresh the page to see results!</StyledText>
             <StyledButtonUser onClick={showModal}>Create post</StyledButtonUser>
             <CardDiv>
-              {state?.map((item: any) => {
+              {state?.map((item: IPostDetails) => {
                 return (
                   <Card key={item.id} id={item.id} text={item.text} publishDate={item.publishDate} firstName={item.owner?.firstName}
                     lastName={item.owner?.lastName} tags={`${item.tags},`} img={item.image}
