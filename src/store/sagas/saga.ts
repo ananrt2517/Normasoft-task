@@ -62,7 +62,7 @@ function* postDetailSaga(action:IAction):any {
 
 function* editSaga(action:IActionEdit):any {
   try {
-    const data: any = yield call(editApi, action.payload);
+    const data = yield call(editApi, action.payload);
     yield put(postDetailsSuccess(data));
   } catch (e) {
     console.log(e)
